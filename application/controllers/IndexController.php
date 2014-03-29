@@ -4,7 +4,7 @@
  * Class Index
  * The index controller
  */
-class Index extends Controller
+class IndexController extends Controller
 {
     /**
      * Construct this object by extending the basic Controller class

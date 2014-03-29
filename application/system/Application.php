@@ -40,35 +40,46 @@ class Application
         if ($this->url_controller) {
            
            $stored_controller = $this->url_controller;
-           
+
+           // fix format to CamelCase + Controller
+           $controller = ucfirst(strtolower($this->url_controller)) . 'Controller';
+                      
             // check for controller: does such a controller exist ?
-            if (file_exists(CONTROLLER_PATH . $this->url_controller . '.php')) {
+            if (file_exists(CONTROLLER_PATH . $controller . '.php')) {
+               
                 // if so, then load this file and create this controller
                 // example: if controller would be "car", then this line would translate into: $this->car = new car();
-                require CONTROLLER_PATH . $this->url_controller . '.php';
-                $this->url_controller = new $this->url_controller();
+                
+                require CONTROLLER_PATH . $controller . '.php';
+                
+                $this->url_controller = new $controller();
 
                 // check for method: does such a method exist in the controller ?
                 if ($this->url_action) {
+                   
                     if (method_exists($this->url_controller, $this->url_action)) {
                        
-                        if($policies) {
-                           $request = array(
-                             'url' => isset($_GET['url'])  ? $_GET['url'] : '',
-                             'controller' => $stored_controller,
-                             'action' => $this->url_action,
-                             'params' => array(
-                                $this->url_parameter_1, 
-                                $this->url_parameter_2, 
-                                $this->url_parameter_3.
-                                $this->url_parameter_4.
-                                $this->url_parameter_5,
-                                $this->url_parameter_6
-                              ),
-                              'errors' => array() 
-                           );
+                        // skip error controller for policies
+                        if(!preg_match("|^error|i", $stored_controller)) {
+                       
+                           if($policies) {
+                              $_REQUEST['_user'] = array(
+                                'url' => isset($_GET['url'])  ? $_GET['url'] : '',
+                                'controller' => $stored_controller,
+                                'action' => $this->url_action,
+                                'params' => array(
+                                   $this->url_parameter_1, 
+                                   $this->url_parameter_2, 
+                                   $this->url_parameter_3.
+                                   $this->url_parameter_4.
+                                   $this->url_parameter_5,
+                                   $this->url_parameter_6
+                                 )
+                              );
                            
-                           $this->applyPolicies( $request );
+                              $this->applyPolicies( $_REQUEST );
+                           }
+                        
                         }
 
                         // call the method and pass the arguments to it
@@ -148,15 +159,21 @@ class Application
      */
     private function applyPolicies( &$request ) {
        
+       $user = $request['_user'];
+       
        foreach($this->policies as $route => $policies){
           
           if(!is_array($policies)) {
              $policies = array( $policies );
           }
           
-          $routexpr = str_replace('/', "\\/", $route);
+          // replace standalone * with .*
+          $routexpr = str_replace('*', ".*", $route);
           
-          if(! preg_match('|'.$routexpr.'|', $request['controller'] . '/' . $request['action'] )) {
+          // escape delimiter
+          $routexpr = str_replace('/', "\\/", $routexpr);          
+          
+          if(! preg_match('|'.$routexpr.'|', $user['controller'] . '/' . $user['action'] )) {
              continue;
           }
           
@@ -178,7 +195,7 @@ class Application
                 
                    if($result !== true) {
                       
-                      header('Location: /error/index?messages=' . urlencode(json_encode($request['errors'])));
+                      header('Location: /error/display?messages=' . urlencode(json_encode($result)));
                       exit(0);
                    }
                    

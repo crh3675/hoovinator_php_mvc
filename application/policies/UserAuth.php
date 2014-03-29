@@ -6,6 +6,18 @@
  * actually responds to the request
  *
  * Configure which routes use which policy method under config/policies.php
+ *
+ * The variable passed is the $_REQUEST object which we can modify as necessary
+ * An extra parameter is added for the user request (_user)
+ *
+ * $_REQUEST['_user'] = array(
+ *     'url' => [url requested],
+ *     'controller' => [controllaer name],
+ *     'action' => [action name],
+ *     'params' => array( [params after controller and action ] )
+ *     );
+ *
+ * Return TRUE or an array of error messages
  */
 class UserAuth {
    
@@ -19,6 +31,6 @@ class UserAuth {
 
    public function cool( Array &$request ){
 
-      return true;
+      return array('bla');
    }
 }
