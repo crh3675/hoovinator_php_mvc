@@ -24,9 +24,6 @@ defined('PUBLIC_PATH')
 defined('POLICY_PATH') 
 || define('POLICY_PATH', APPLICATION_PATH . DIRECTORY_SEPARATOR . 'policies');
 
-defined('APPLICATION_KINT_DEBUG')
-|| define('APPLICATION_KINT_DEBUG', FALSE);
-
 // Load application config (error reporting, database credentials etc.)
 require '../application/config/config.php';
 

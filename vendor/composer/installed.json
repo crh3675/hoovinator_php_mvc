@@ -1,53 +1,5 @@
 [
     {
-        "name": "raveren/kint",
-        "version": "dev-1.0.0-wip",
-        "version_normalized": "dev-1.0.0-wip",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/raveren/kint.git",
-            "reference": "16739cbd1a60045c921115555b52bc0479b8ce8e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/raveren/kint/zipball/16739cbd1a60045c921115555b52bc0479b8ce8e",
-            "reference": "16739cbd1a60045c921115555b52bc0479b8ce8e",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.2.0"
-        },
-        "time": "2014-03-07 06:52:32",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "files": [
-                "Kint.class.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Rokas Šleinius",
-                "homepage": "https://github.com/raveren"
-            },
-            {
-                "name": "Contributors",
-                "homepage": "https://github.com/raveren/kint/contributors"
-            }
-        ],
-        "description": "Kint - debugging helper for PHP developers",
-        "homepage": "https://github.com/raveren/kint",
-        "keywords": [
-            "debug",
-            "kint",
-            "php"
-        ]
-    },
-    {
         "name": "facebook/php-sdk",
         "version": "v3.2.3",
         "version_normalized": "3.2.3.0",

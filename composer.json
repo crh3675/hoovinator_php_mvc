@@ -18,7 +18,6 @@
     },
     "require":{
         "php": ">=5.3.7",
-        "facebook/php-sdk": "@stable",
-        "raveren/kint": "dev-1.0.0-wip"
+        "facebook/php-sdk": "@stable"
     }
 }

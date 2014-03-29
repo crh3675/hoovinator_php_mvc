@@ -11,5 +11,5 @@
  */
 
 return array(
-  '*' => array( 'UserAuth.valid' )
+  '^(?!error/index).*$' => array( 'UserAuth.valid', 'UserAuth.cool' )
 );

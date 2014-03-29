@@ -2,6 +2,9 @@
 # more here: http://stackoverflow.com/q/20918746/1114320
 Options -MultiViews
 
+php_flag display_errors On
+
+<IfModule mod_rewrite.c>
 # turn rewriting on
 RewriteEngine On
 
@@ -14,3 +17,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l
 
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+</IfModule>

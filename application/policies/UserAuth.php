@@ -13,7 +13,12 @@ class UserAuth {
    }  
 
    public function valid( Array &$request ){
- 
+
+      return true;
+   }
+
+   public function cool( Array &$request ){
+
       return true;
    }
 }

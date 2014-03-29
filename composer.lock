@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "6b71e1883d5e1d2c59f5df506a1a8445",
+    "hash": "a3e519044e4caecbaddbc8c109a85a05",
     "packages": [
         {
             "name": "facebook/php-sdk",
@@ -50,52 +50,6 @@
                 "sdk"
             ],
             "time": "2013-11-19 23:11:14"
-        },
-        {
-            "name": "raveren/kint",
-            "version": "dev-1.0.0-wip",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/raveren/kint.git",
-                "reference": "16739cbd1a60045c921115555b52bc0479b8ce8e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/raveren/kint/zipball/16739cbd1a60045c921115555b52bc0479b8ce8e",
-                "reference": "16739cbd1a60045c921115555b52bc0479b8ce8e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "Kint.class.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Rokas Šleinius",
-                    "homepage": "https://github.com/raveren"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/raveren/kint/contributors"
-                }
-            ],
-            "description": "Kint - debugging helper for PHP developers",
-            "homepage": "https://github.com/raveren/kint",
-            "keywords": [
-                "debug",
-                "kint",
-                "php"
-            ],
-            "time": "2014-03-07 06:52:32"
         }
     ],
     "packages-dev": [
@@ -106,8 +60,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "facebook/php-sdk": 0,
-        "raveren/kint": 20
+        "facebook/php-sdk": 0
     },
     "platform": {
         "php": ">=5.3.7"

@@ -20,6 +20,6 @@ class Error extends Controller
      */
     function index()
     {
-        $this->view->render('error/index', array( 'messages' => json_decode(@$_GET['message']) ));
+        $this->view->render('error/index', array( 'messages' => json_decode(@$_GET['messages']) ));
     }
 }

@@ -20,7 +20,7 @@ ini_set("display_errors", 1);
  * if you are using a (different) port, then put this in here, like http://mydomain:8888/subfolder/
  * Note: The trailing slash is important!
  */
-define('URL', 'http://maas-ads.localhost/');
+define('URL', 'http://mvc-local.hoovinator.com/');
 
 define('DEFAULT_CONTROLLER', 'index');
 

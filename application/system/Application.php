@@ -155,7 +155,6 @@ class Application
           }
           
           $routexpr = str_replace('/', "\\/", $route);
-          $routexpr = str_replace('*', ".*", $routexpr);
           
           if(! preg_match('|'.$routexpr.'|', $request['controller'] . '/' . $request['action'] )) {
              continue;
@@ -179,6 +178,7 @@ class Application
                 
                    if($result !== true) {
                       
+                      header('Location: /error/index?messages=' . urlencode(json_encode($request['errors'])));
                       exit(0);
                    }
                    
