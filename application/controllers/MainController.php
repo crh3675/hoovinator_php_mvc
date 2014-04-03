@@ -4,7 +4,7 @@
  * Class Main
  * The main controller
  */
-class MainController extends MaasAds\Controller
+class MainController extends MVC\Framework\Controller
 {
     /**
      * Construct this object by extending the basic Controller class
@@ -20,7 +20,7 @@ class MainController extends MaasAds\Controller
      */
     function index()
     {
-       $userModel = $this->model('User','Ads');
+       $userModel = $this->model('MaasAds\User');
        
        $this->view->render('index/index', array('dog' => 'Jim'));
     }

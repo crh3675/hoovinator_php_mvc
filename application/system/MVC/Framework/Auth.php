@@ -1,6 +1,6 @@
 <?php
 
-namespace MaasAds;
+namespace MVC\Framework;
 
 /**
  * Class Auth

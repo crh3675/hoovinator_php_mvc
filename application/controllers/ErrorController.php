@@ -5,7 +5,7 @@
  * This controller simply shows a page that will be displayed when a controller/method is not found.
  * Simple 404 handling.
  */
-class ErrorController extends MaasAds\Controller
+class ErrorController extends MVC\Framework\Controller
 {
     /**
      * Construct this object by extending the basic Controller class

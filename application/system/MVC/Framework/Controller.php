@@ -1,6 +1,6 @@
 <?php
 
-namespace MaasAds;
+namespace MVC\Framework;
 
 /**
  * This is the "base controller class". All other "real" controllers extend this class.
@@ -36,21 +36,8 @@ class Controller
      * loads the model with the given name.
      * @param $name string name of the model
      */
-    public function model($name, $namespace = null)
-    {
-        $path = MODELS_PATH . $name . '.php';
-
-        if (file_exists($path)) {
-            require_once $path;
-            // The "Model" has a capital letter as this is the second part of the model class name,
-            // all models have names like "LoginModel"
-            
-            if($namespace) {
-               $klass = $namespace . '\\'  .$name;
-               return new $klass($this->db);
-            } else {
-               return new $name($this->db);
-            }
-        }
+    public function model($name)
+    {  
+       return new $name($this->db);
     }
 }

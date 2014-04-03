@@ -33,4 +33,4 @@ if (file_exists('../vendor/autoload.php')) {
 $policies = require APPLICATION_PATH . DIRECTORY_SEPARATOR . 'config'. DIRECTORY_SEPARATOR . 'policies.php';
 
 // Start our application
-$app = new \MaasAds\Application( $policies );
+$app = new \MVC\Framework\Application( $policies );

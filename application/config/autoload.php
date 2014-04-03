@@ -12,7 +12,9 @@ function autoload($class) {
     $class = str_replace("\\", '/', $class);
     
     if (file_exists(LIBS_PATH . $class . ".php")) {
-        require LIBS_PATH . $class . ".php";
+        require_once LIBS_PATH . $class . ".php";
+    } else if(file_exists(MODELS_PATH . $class . ".php")) {
+       require_once MODELS_PATH . $class . ".php";
     } else {
         exit ('The file ' . $class . '.php is missing in the libs folder.');
     }
