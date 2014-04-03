@@ -22,9 +22,11 @@ define('MODELS_PATH',      APPLICATION_PATH . DIRECTORY_SEPARATOR . 'models' . D
 define('VIEWS_PATH',       APPLICATION_PATH . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR);
 define('LAYOUTS_PATH',     APPLICATION_PATH . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . 'layouts' . DIRECTORY_SEPARATOR);
 define('POLICY_PATH',      APPLICATION_PATH . DIRECTORY_SEPARATOR . 'policies' . DIRECTORY_SEPARATOR);
-
    
 define('COOKIE_RUNTIME', 1209600);
+
+define('COOKIE_NAME', '_maasads');
+
 // the domain where the cookie is valid for, for local development ".127.0.0.1" and ".localhost" will work
 // IMPORTANT: always put a dot in front of the domain, like ".mydomain.com" !
 define('COOKIE_DOMAIN', '.localhost');

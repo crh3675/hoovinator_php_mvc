@@ -14,10 +14,11 @@ class Session
     /**
      * starts the session
      */
-    public static function init()
+    public static function init( $sessname = '_sessid')
     {
         // if no session exist, start the session
         if (session_id() == '') {
+            session_name( $sessname );
             session_start();
         }
     }
