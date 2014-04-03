@@ -1,21 +1,16 @@
 {
-    "name": "panique/php-login",
+    "name": "phunware/maas-ads",
     "type": "project",
-    "description": "A PHP login system embedded in a simple MVC framework",
-    "keywords": ["login", "auth", "user", "authentification", "mvc"],
-    "homepage": "https://github.com/panique/php-login",
-    "license": "MIT",
+    "description": "MaaS Advertising",
+    "keywords": ["advertising","mvc", "phunware"],
+    "homepage": "http://www.tapit.com",
+    "license": "None",
     "authors": [
         {
-            "name": "Panique",
-            "homepage": "http://careers.stackoverflow.com/panique",
+            "name": "Craig Hoover",
             "role": "Developer"
         }
     ],
-    "support": {
-        "issues": "https://github.com/panique/php-login/issues",
-        "source": "https://github.com/panique/php-login"
-    },
     "require":{
         "php": ">=5.3.7",
         "facebook/php-sdk": "@stable"

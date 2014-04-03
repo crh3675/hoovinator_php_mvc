@@ -13,8 +13,8 @@ defined('APPLICATION_ENV')
 defined('APPLICATION_PATH') 
 || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application') . DIRECTORY_SEPARATOR);
 
-defined('LIBS_PATH')
-|| define('LIBS_PATH',  realpath(dirname(__FILE__) . '/../system') . DIRECTORY_SEPARATOR);
+defined('SYSTEM_PATH')
+|| define('SYSTEM_PATH',  realpath(dirname(__FILE__) . '/../system') . DIRECTORY_SEPARATOR);
 
 
 // Load application config (error reporting, database credentials etc.)

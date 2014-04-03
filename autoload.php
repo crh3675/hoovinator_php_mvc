@@ -7,12 +7,12 @@
  * standardized auto-loader https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md, so we do:
  */
 function autoload($class) {
-    // if file does not exist in LIBS_PATH folder [set it in config/config.php]
+    // if file does not exist in SYSTEM_PATH folder [set it in config/config.php]
     
     $class = str_replace("\\", '/', $class);
     
-    if (file_exists(LIBS_PATH . $class . ".php")) {
-        require_once LIBS_PATH . $class . ".php";
+    if (file_exists(SYSTEM_PATH . $class . ".php")) {
+        require_once SYSTEM_PATH . $class . ".php";
     } else if(file_exists(MODELS_PATH . $class . ".php")) {
        require_once MODELS_PATH . $class . ".php";
     } else {
