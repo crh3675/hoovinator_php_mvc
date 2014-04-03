@@ -28,8 +28,6 @@ define('DEFAULT_CONTROLLER', 'Main');
  * Configuration for: Folders
  * Here you define where your folders are. Unless you have renamed them, there's no need to change this.
  */
-define('LIBS_PATH',
-   APPLICATION_PATH . DIRECTORY_SEPARATOR .'system'  .DIRECTORY_SEPARATOR);
    
 define('CONTROLLER_PATH', 
    APPLICATION_PATH . DIRECTORY_SEPARATOR . 'controllers' . DIRECTORY_SEPARATOR);
@@ -42,6 +40,12 @@ define('VIEWS_PATH',
    
 define('LAYOUTS_PATH', 
    APPLICATION_PATH . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . 'layouts' . DIRECTORY_SEPARATOR);
+   
+define('PUBLIC_PATH', 
+   realpath(dirname(__FILE__) . '/../public') . DIRECTORY_SEPARATOR);
+
+define('POLICY_PATH', 
+   APPLICATION_PATH . DIRECTORY_SEPARATOR . 'policies' . DIRECTORY_SEPARATOR);
    
 
 

@@ -20,7 +20,7 @@ class MainController extends MVC\Framework\Controller
      */
     function index()
     {
-       $userModel = $this->model('MaasAds\User');
+       $userModel = $this->model('User');
        
        $this->view->render('index/index', array('dog' => 'Jim'));
     }
