@@ -1,5 +1,7 @@
 <?php
 
+namespace MaasAds;
+
 /**
  * Class Auth
  * Simply checks if user is logged in. In the app, several controllers use Auth::handleLogin() to

@@ -1,11 +1,13 @@
 <?php
 
+namespace MaasAds;
+
 /**
  * Class Database
  * Creates a PDO database connection. This connection will be passed into the models (so we use
  * the same connection for all models and prevent to open multiple connections at once)
  */
-class Database extends PDO
+class Database extends \PDO
 {
     /**
      * Construct this Database object, extending the PDO object
@@ -19,7 +21,7 @@ class Database extends PDO
          * For example, fetch mode FETCH_ASSOC would return results like this: $result["user_name] !
          * @see http://www.php.net/manual/en/pdostatement.fetch.php
          */
-        $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ, PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING);
+        $options = array(\PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_OBJ, \PDO::ATTR_ERRMODE => \PDO::ERRMODE_WARNING);
 
         /**
          * Generate a database connection, using the PDO connector

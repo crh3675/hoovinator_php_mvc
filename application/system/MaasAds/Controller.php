@@ -1,5 +1,7 @@
 <?php
 
+namespace MaasAds;
+
 /**
  * This is the "base controller class". All other "real" controllers extend this class.
  * Whenever a controller is created, we also

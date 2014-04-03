@@ -1,15 +1,10 @@
 <?php
 
 /**
- * A simple, clean and secure PHP Login Script embedded into a small framework.
- * Also available in other version: one-file, minimal, advanced. See php-login.net for more info.
+ * A simple, clean and secure PHP framework.
  *
  * MVC FRAMEWORK VERSION
  *
- * @author Panique
- * @link http://www.php-login.net
- * @link https://github.com/panique/php-login/
- * @license http://opensource.org/licenses/MIT MIT License
  */
 
 defined('APPLICATION_ENV')
@@ -38,4 +33,4 @@ if (file_exists('../vendor/autoload.php')) {
 $policies = require APPLICATION_PATH . DIRECTORY_SEPARATOR . 'config'. DIRECTORY_SEPARATOR . 'policies.php';
 
 // Start our application
-$app = new Application( $policies );
+$app = new \MaasAds\Application( $policies );

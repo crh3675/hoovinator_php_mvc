@@ -1,5 +1,7 @@
 <?php
 
+namespace MaasAds;
+
 /**
  * Session class
  *

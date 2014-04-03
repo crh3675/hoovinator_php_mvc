@@ -8,7 +8,7 @@ class User
      * Constructor, expects a Database connection
      * @param Database $db The Database object
      */
-    public function __construct(\Database $db)
+    public function __construct(\MaasAds\Database $db)
     {
        $this->db = $db;
     }

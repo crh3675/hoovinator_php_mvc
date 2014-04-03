@@ -8,6 +8,9 @@
  */
 function autoload($class) {
     // if file does not exist in LIBS_PATH folder [set it in config/config.php]
+    
+    $class = str_replace("\\", '/', $class);
+    
     if (file_exists(LIBS_PATH . $class . ".php")) {
         require LIBS_PATH . $class . ".php";
     } else {

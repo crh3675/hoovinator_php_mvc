@@ -1,5 +1,7 @@
 <?php
 
+namespace MaasAds;
+
 /**
  * Class Application
  * The heart of the app
@@ -63,7 +65,7 @@ class Application
                         if(!preg_match("|^error|i", $stored_controller)) {
                        
                            if($policies) {
-                              $_REQUEST['_user'] = array(
+                              $_REQUEST['_incoming'] = array(
                                 'url' => isset($_GET['url'])  ? $_GET['url'] : '',
                                 'controller' => $stored_controller,
                                 'action' => $this->url_action,
@@ -94,8 +96,9 @@ class Application
                             $this->url_controller->{$this->url_action}();
                         }
                     } else {
+
                         // redirect user to error page (there's a controller for that)
-                        header('location: ' . URL . 'error/index');
+                        header('location: ' . URL . 'error/display?messages=' . json_encode(array("Method [{$this->url_action}] not found for route [$stored_controller]")));
                     }
                 } else {
                     // default/fallback: call the index() method of a selected controller
@@ -104,7 +107,7 @@ class Application
             // obviously mistyped controller name, therefore show 404
             } else {
                 // redirect user to error page (there's a controller for that)
-                header('location: ' . URL . 'error/index');
+                header('location: ' . URL . 'error/display?messages=' . json_encode(array("Route not found for [$stored_controller]")));
             }
         // if url_controller is empty, simply show the main page (index/index)
         } else {
@@ -127,11 +130,11 @@ class Application
             $url = filter_var($url, FILTER_SANITIZE_URL);
             $url = explode('/', $url);
             
-            // if only one param is sent, assume default controller
+            // if only one param is sent, assume index
             if(count($url) == 1 ){
                $url = array(
-                  DEFAULT_CONTROLLER,
-                  $url[0]
+                  $url[0],
+                  'index'
                );
             }
 
@@ -159,7 +162,7 @@ class Application
      */
     private function applyPolicies( &$request ) {
        
-       $user = $request['_user'];
+       $user = $request['_incoming'];
        
        foreach($this->policies as $route => $policies){
           

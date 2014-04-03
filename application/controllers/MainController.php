@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Class Index
- * The index controller
+ * Class Main
+ * The main controller
  */
-class IndexController extends Controller
+class MainController extends MaasAds\Controller
 {
     /**
      * Construct this object by extending the basic Controller class

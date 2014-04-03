@@ -10,9 +10,9 @@
  * The variable passed is the $_REQUEST object which we can modify as necessary
  * An extra parameter is added for the user request (_user)
  *
- * $_REQUEST['_user'] = array(
+ * $_REQUEST['_incoming'] = array(
  *     'url' => [url requested],
- *     'controller' => [controllaer name],
+ *     'controller' => [controller name],
  *     'action' => [action name],
  *     'params' => array( [params after controller and action ] )
  *     );
@@ -31,6 +31,6 @@ class UserAuth {
 
    public function cool( Array &$request ){
 
-      return array('bla');
+      return true;
    }
 }
