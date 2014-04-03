@@ -19,17 +19,20 @@
  *
  * Return TRUE or an array of error messages
  */
+
+ 
 class UserAuth {
    
    public function __construct(){
    }  
 
-   public function valid( Array &$request ){
+   public function valid( &$incoming ){
+
 
       return true;
    }
 
-   public function cool( Array &$request ){
+   public function cool( &$incoming ){
 
       return true;
    }
