@@ -146,7 +146,7 @@ class Application
           
           foreach($policies as $policy){
           
-             list($className, $classMethod) = explode('.', $policy);
+             list($className, $classMethod) = explode('::', $policy);
              
              $classFile = POLICY_PATH. DIRECTORY_SEPARATOR . $className . '.php';
           
